@@ -1,0 +1,12 @@
+/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Data_CE150213/bin/Debug/net6.0/Data_CE150213.deps.json
+/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Data_CE150213/bin/Debug/net6.0/Data_CE150213.dll
+/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Data_CE150213/bin/Debug/net6.0/Data_CE150213.pdb
+/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Data_CE150213/obj/Debug/net6.0/Data_CE150213.csproj.AssemblyReference.cache
+/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Data_CE150213/obj/Debug/net6.0/Data_CE150213.GeneratedMSBuildEditorConfig.editorconfig
+/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Data_CE150213/obj/Debug/net6.0/Data_CE150213.AssemblyInfoInputs.cache
+/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Data_CE150213/obj/Debug/net6.0/Data_CE150213.AssemblyInfo.cs
+/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Data_CE150213/obj/Debug/net6.0/Data_CE150213.csproj.CoreCompileInputs.cache
+/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Data_CE150213/obj/Debug/net6.0/Data_CE150213.dll
+/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Data_CE150213/obj/Debug/net6.0/refint/Data_CE150213.dll
+/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Data_CE150213/obj/Debug/net6.0/Data_CE150213.pdb
+/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Data_CE150213/obj/Debug/net6.0/ref/Data_CE150213.dll
