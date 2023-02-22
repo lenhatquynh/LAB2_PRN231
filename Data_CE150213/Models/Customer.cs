@@ -27,10 +27,25 @@ public class Customer
 
     [Required]
     [Column(TypeName = "DATE")]
+    [NotFutureDate(ErrorMessage = "Birthday cannot be in the future.")]
     public DateTime Birthday { get; set; }
 
     [Required]
     [Column(TypeName = "TEXT")]
     public string Address { get; set; }
 
+}
+public class NotFutureDateAttribute : ValidationAttribute
+{
+    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+    {
+        DateTime birthday = (DateTime)value;
+
+        if (birthday > DateTime.Today)
+        {
+            return new ValidationResult(ErrorMessage);
+        }
+
+        return ValidationResult.Success;
+    }
 }
