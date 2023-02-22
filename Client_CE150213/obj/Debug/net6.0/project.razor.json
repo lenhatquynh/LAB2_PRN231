@@ -18379,6 +18379,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Client_CE150213/Views/Customer/Edit.cshtml",
+      "TargetPath": "Views\\Customer\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Client_CE150213/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"

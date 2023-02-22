@@ -13,6 +13,32 @@ public class CustomerController : Controller
         ClientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
     }
 
+    public async Task<IActionResult> Edit(string Username, [Bind("Username,Password,Fullname,Gender,Birthday,Address")] Customer customer)
+    {
+        if (Username != customer.Username)
+        {
+            return NotFound();
+        }
+
+        if (ModelState.IsValid)
+        {
+            HttpClient clientx = new HttpClient(ClientHandler);
+            clientx.BaseAddress = new Uri("https://localhost:7111/odata/Customer/UpdateCustomer");
+            var res = await clientx.PutAsJsonAsync(clientx.BaseAddress, customer);
+            if (res.StatusCode == System.Net.HttpStatusCode.OK) return RedirectToAction(nameof(Index));
+        }
+        return View(customer);
+    }
+    [HttpGet]
+    public async Task<IActionResult> Edit(string id)
+    {
+        HttpClient client = new HttpClient(ClientHandler);
+        client.BaseAddress = new Uri($"https://localhost:7111/odata/Customer/GetCustomerByUsername?Username={id}");
+        var res = await client.GetStringAsync(client.BaseAddress);
+        Customer customer = JsonConvert.DeserializeObject<Customer>(res);
+
+        return View(customer);
+    }
     // GET: Customers
     public IActionResult Index()
     {

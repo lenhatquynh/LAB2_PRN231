@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
 using Microsoft.AspNetCore.OData.Routing.Controllers;
-
+using Data_CE150213.Models;
 namespace API_CE150213.Controllers;
 
 [Route("odata/[controller]/[Action]")]
@@ -14,6 +14,19 @@ public class CustomerController : ODataController
     public CustomerController(ICustomerRepository CustomerRepository)
     {
         this.CustomerRepository = CustomerRepository;
+    }
+
+    [EnableQuery]
+    [HttpPut]
+    public async Task<IActionResult> UpdateCustomer(Customer customer)
+    {
+        var check = await CustomerRepository.AnyAsync(customer.Username);
+        if (!check)
+        {
+            return NotFound();
+        }
+        await CustomerRepository.UpdateAsync(customer);
+        return Ok("Update Success!");
     }
 
     [EnableQuery]
