@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
 using Microsoft.AspNetCore.OData.Routing.Controllers;
-
+using Data_CE150213.Models;
 namespace API_CE150213.Controllers;
 
 [Route("odata/[controller]/[Action]")]
@@ -14,6 +14,22 @@ public class CustomerController : ODataController
     public CustomerController(ICustomerRepository CustomerRepository)
     {
         this.CustomerRepository = CustomerRepository;
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateCustomer(Customer customer)
+    {
+        var check = await CustomerRepository.AnyAsync(customer.Username);
+        if (check)
+        {
+            return BadRequest("Customer is exist!");
+        }
+        var created = await CustomerRepository.CreateAsync(customer);
+        if (created)
+        {
+            return Ok("Create Success!");
+        }
+        return BadRequest("Create fail!");
     }
 
     [EnableQuery]

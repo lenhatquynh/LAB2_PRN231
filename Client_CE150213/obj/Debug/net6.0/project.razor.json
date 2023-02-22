@@ -18374,6 +18374,11 @@
   "RootNamespace": "Client_CE150213",
   "Documents": [
     {
+      "FilePath": "/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Client_CE150213/Views/Customer/Create.cshtml",
+      "TargetPath": "Views\\Customer\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/quynh/School/Lab_PRN231/Docs2/LAB2_CE150213/Client_CE150213/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"

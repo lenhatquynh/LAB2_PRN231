@@ -23,6 +23,25 @@ public class CustomerController : Controller
         return View(customers);
     }
 
+    // post: Customer/create/LeNhatQuynh
+    public async Task<IActionResult> Create([Bind("Username,Password,Fullname,Gender,Birthday,Address")] Customer customer)
+    {
+        HttpClient client = new HttpClient(ClientHandler);
+        client.BaseAddress = new Uri($"https://localhost:7111/odata/Customer/CreateCustomer");
+        var res = await client.PostAsJsonAsync(client.BaseAddress, customer);
+        if (res.StatusCode == System.Net.HttpStatusCode.OK)
+        {
+            return RedirectToAction(nameof(Index));
+        }
+        ViewData["Error"] = "Customer username is exist!";
+        return View(customer);
+    }
+    [HttpGet]
+    public IActionResult Create()
+    {
+        return View();
+    }
+
     // GET: Customer/Delete/LeNhatQuynh
     public IActionResult Delete(string id)
     {
